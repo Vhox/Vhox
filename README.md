@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="https://www.gitskins.com/api/section/hero?username=vhox&theme=github-dark&style=aura&avatar=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F13035171%3Fu%3D6ca627a557b2e1bf657b3b7e393966ccf1232455%26v%3D4&v=vhox-system-hero-1" alt="Thales Maciel hero visual" />
+  <img src="./assets/hero.svg" alt="Thales Maciel hero visual" />
 </p>
 
 <p align="center">
