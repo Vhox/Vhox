@@ -11,15 +11,11 @@
 </p>
 
 <p align="center">
-  <img src="https://www.gitskins.com/api/section/heatmap?username=vhox&theme=github-dark&variant=space-shooter&v=vhox-system-space-shooter-3" alt="Thales Maciel contribution Space Shooter" />
+  <img src="./assets/contribution-shooter.svg" alt="Thales Maciel contribution Space Shooter" />
 </p>
 
 <p align="center">
-  <img src="https://www.gitskins.com/api/section/stats?username=vhox&theme=github-dark&style=aura&avatar=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F13035171%3Fu%3D6ca627a557b2e1bf657b3b7e393966ccf1232455%26v%3D4&v=vhox-system-stats-4" alt="Thales Maciel stats visual" />
-</p>
-
-<p align="center">
-  <img src="https://www.gitskins.com/api/section/social?username=vhox&theme=github-dark&style=aura&avatar=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F13035171%3Fu%3D6ca627a557b2e1bf657b3b7e393966ccf1232455%26v%3D4&v=vhox-system-social-5" alt="Thales Maciel social visual" />
+  <img src="./assets/profile-signal.svg" alt="Thales Maciel stats visual" />
 </p>
 
 <p align="center">
