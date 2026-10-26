@@ -23,13 +23,9 @@
 </p>
 
 <p align="center">
-  <a href="https://www.youtube.com/@macielthales">YouTube</a>
-  &nbsp;·&nbsp;
-  <a href="https://www.instagram.com/thalesmacciel">Instagram</a>
-  &nbsp;·&nbsp;
-  <a href="https://www.twitch.tv/vhoxzera">Twitch</a>
-  &nbsp;·&nbsp;
-  <a href="mailto:thales.mac@gmail.com">Email</a>
-  &nbsp;·&nbsp;
-  <a href="https://www.linkedin.com/in/thales-maciel-b8466a173">LinkedIn</a>
+  <a href="https://www.youtube.com/@macielthales"><img src="./assets/connect-youtube.svg" alt="YouTube" /></a>
+  <a href="https://www.instagram.com/thalesmacciel"><img src="./assets/connect-instagram.svg" alt="Instagram" /></a>
+  <a href="https://www.twitch.tv/vhoxzera"><img src="./assets/connect-twitch.svg" alt="Twitch" /></a>
+  <a href="mailto:thales.mac@gmail.com"><img src="./assets/connect-email.svg" alt="Email" /></a>
+  <a href="https://www.linkedin.com/in/thales-maciel-b8466a173"><img src="./assets/connect-linkedin.svg" alt="LinkedIn" /></a>
 </p>
