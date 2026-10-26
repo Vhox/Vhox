@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VHOX // SYSTEM — profile concept</title>
+    <style>
+      :root {
+        --ink: #080d14;
+        --panel: rgba(12, 18, 29, .86);
+        --text: #e8f0fc;
+        --muted: #8b97aa;
+        --line: #3988df;
+        --line-dim: rgba(57, 136, 223, .58);
+        --blue: #55a7ff;
+        --cyan: #35d6eb;
+        --violet: #9b6df3;
+        --green: #42d66a;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        color: var(--text);
+        background:
+          radial-gradient(58rem 42rem at 50% 9%, rgba(34, 103, 151, .13), transparent 62%),
+          radial-gradient(35rem 35rem at 95% 70%, rgba(42, 170, 126, .07), transparent 68%),
+          var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      .shell { width: min(1060px, calc(100% - 36px)); margin: 58px auto 86px; }
+      .eyebrow, .command, .meta, .label, .terminal { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
+      .eyebrow { color: var(--blue); font-size: 12px; font-weight: 800; letter-spacing: .18em; }
+      .panel {
+        position: relative;
+        overflow: hidden;
+        margin: 0 0 30px;
+        padding: 30px 32px;
+        border: 1px solid var(--line-dim);
+        border-radius: 25px;
+        background:
+          radial-gradient(42rem 15rem at 102% 10%, rgba(27, 159, 100, .13), transparent 58%),
+          radial-gradient(30rem 18rem at 52% 112%, rgba(111, 53, 166, .12), transparent 60%),
+          linear-gradient(115deg, rgba(21, 31, 47, .9), rgba(8, 13, 20, .96) 42%, rgba(12, 21, 29, .91));
+        box-shadow: inset 0 0 0 1px rgba(75, 161, 255, .07), 0 0 20px rgba(35, 125, 218, .08);
+      }
+      .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit; background: linear-gradient(105deg, rgba(96, 174, 255, .07), transparent 18%, transparent 75%, rgba(57, 232, 178, .06)); }
+      .topline, .section-head { position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 18px; align-items: baseline; }
+      .topline { margin-bottom: 25px; }
+      .status { color: var(--muted); font: 11px/1.3 "SFMono-Regular", Consolas, monospace; letter-spacing: .08em; }
+      .hero { min-height: 296px; display: flex; align-items: center; gap: 27px; }
+      .orbital { position: absolute; right: 52px; top: 34px; width: 170px; height: 170px; border: 1px solid rgba(102, 169, 229, .08); border-radius: 50%; box-shadow: 0 0 0 18px rgba(102, 169, 229, .018), 0 0 0 44px rgba(102, 169, 229, .012); }
+      .orbital::after { content: ""; position: absolute; width: 8px; height: 8px; right: -4px; top: 37px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 14px var(--blue); }
+      .avatar { width: 112px; height: 112px; flex: 0 0 auto; object-fit: cover; border-radius: 50%; border: 2px solid var(--blue); padding: 3px; box-shadow: 0 0 20px rgba(70, 159, 255, .23); }
+      .hero-copy { position: relative; z-index: 1; min-width: 0; }
+      .handle { margin: 0 0 7px; color: #9aa9bf; font: 700 15px/1 "SFMono-Regular", Consolas, monospace; letter-spacing: .16em; }
+      h1 { margin: 0; font-size: clamp(42px, 6vw, 69px); line-height: .94; letter-spacing: -.07em; }
+      .intro { margin: 14px 0 22px; max-width: 690px; color: #a7b3c5; font-size: 16px; line-height: 1.55; }
+      .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+      .chip { padding: 9px 17px; border: 1px solid var(--line-dim); border-radius: 999px; color: #dde9f8; font-size: 13px; font-weight: 700; background: rgba(11, 17, 27, .52); }
+      .section-head { padding-bottom: 14px; border-bottom: 1px solid rgba(77, 150, 224, .6); }
+      h2 { margin: 0; color: var(--blue); font: 800 14px/1 "SFMono-Regular", Consolas, monospace; letter-spacing: .16em; }
+      .command { color: #77869c; font-size: 13px; }
+      .about-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.35fr .65fr; gap: 45px; padding-top: 28px; }
+      .about-grid p { margin: 0; color: #bdc8d7; line-height: 1.7; }
+      .facts { display: grid; gap: 13px; align-content: start; }
+      .fact { display: flex; justify-content: space-between; padding-bottom: 12px; border-bottom: 1px solid rgba(136, 157, 190, .16); color: #9ba9bc; font-size: 13px; }
+      .fact b { color: #e1eaf5; font: 700 12px "SFMono-Regular", Consolas, monospace; }
+      .projects { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding-top: 28px; }
+      .project { min-height: 178px; padding: 19px; border: 1px solid rgba(65, 139, 224, .72); border-radius: 16px; background: rgba(5, 10, 17, .42); }
+      .project .project-num { color: var(--blue); font: 11px "SFMono-Regular", Consolas, monospace; }
+      .project h3 { margin: 20px 0 8px; font-size: 22px; letter-spacing: -.03em; }
+      .project p { color: #90a0b5; font-size: 13px; line-height: 1.45; }
+      .project .project-meta { display: block; margin-top: 28px; color: #67768c; font: 11px "SFMono-Regular", Consolas, monospace; }
+      .stack { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding-top: 27px; }
+      .tool { padding: 17px; border: 1px solid rgba(85, 144, 211, .46); border-radius: 14px; background: rgba(4, 9, 15, .36); }
+      .tool span { display: block; color: var(--cyan); font: 700 11px "SFMono-Regular", Consolas, monospace; letter-spacing: .1em; }
+      .tool b { display: block; margin-top: 11px; font-size: 15px; }
+      .shooter { padding-bottom: 36px; }
+      .grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(26, 1fr); gap: 6px; margin-top: 31px; padding: 12px 8px 90px; border-radius: 16px; background: rgba(5, 11, 18, .37); }
+      .cell { aspect-ratio: 1; border-radius: 3px; background: #151d27; }
+      .cell:nth-child(7n), .cell:nth-child(31n) { background: #1e3b4d; }
+      .cell:nth-child(11n) { background: #275842; }
+      .ship { position: absolute; z-index: 2; bottom: 28px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 17px solid transparent; border-right: 17px solid transparent; border-bottom: 40px solid var(--blue); filter: drop-shadow(0 0 8px rgba(74, 164, 255, .6)); }
+      .ship::after { content: ""; position: absolute; bottom: -50px; left: -5px; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 13px solid #ef9b48; }
+      .beam { position: absolute; z-index: 2; bottom: 69px; left: 50%; width: 1px; height: 80px; background: linear-gradient(transparent, rgba(76, 214, 255, .9)); box-shadow: 0 0 9px #38d7f1; }
+      .signal { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; padding-top: 28px; }
+      .metric { padding: 20px; border: 1px solid rgba(60, 140, 230, .8); border-radius: 18px; background: rgba(5, 10, 17, .4); }
+      .metric span { color: #96a3b6; font: 700 12px "SFMono-Regular", Consolas, monospace; letter-spacing: .08em; }
+      .metric b { display: block; margin: 10px 0 17px; color: var(--accent); font-size: 44px; line-height: .9; letter-spacing: -.05em; }
+      .meter { height: 7px; border-radius: 20px; background: rgba(185, 203, 232, .13); overflow: hidden; }
+      .meter i { display: block; height: 100%; width: var(--level); border-radius: inherit; background: var(--accent); }
+      .connect { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 10px; padding-top: 26px; }
+      .link { padding: 12px 16px; border: 1px solid rgba(63, 137, 219, .62); border-radius: 12px; color: #cbd9ec; text-decoration: none; background: rgba(8, 14, 22, .47); font: 700 12px "SFMono-Regular", Consolas, monospace; }
+      .link em { margin-right: 9px; color: var(--blue); font-style: normal; }
+      .footer { text-align: center; color: #536176; font: 11px "SFMono-Regular", Consolas, monospace; letter-spacing: .12em; }
+      @media (max-width: 720px) { .shell { margin-top: 18px; } .panel { padding: 24px 20px; border-radius: 20px; } .hero { align-items: flex-start; flex-direction: column; } .projects, .stack, .signal { grid-template-columns: 1fr 1fr; } .about-grid { grid-template-columns: 1fr; gap: 25px; } .grid { gap: 3px; } }
+      @media (max-width: 430px) { .projects, .stack, .signal { grid-template-columns: 1fr; } .topline, .section-head { align-items: flex-start; flex-direction: column; } }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="panel hero">
+        <div class="orbital"></div>
+        <img class="avatar" src="https://avatars.githubusercontent.com/u/13035171?v=4" alt="Thales Maciel" />
+        <div class="hero-copy">
+          <p class="handle">@VHOX</p>
+          <h1>Thales Maciel</h1>
+          <p class="intro">Software Engineer and musician. I build systems with the same focus, rhythm, and attention to detail I bring to music.</p>
+          <div class="actions"><span class="chip">OPEN SOURCE</span><span class="chip">SYSTEMS</span><span class="chip">MUSIC × CODE</span></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head"><h2>ABOUT</h2><span class="command">./identity --read</span></div>
+        <div class="about-grid"><p>I’m Thales — a software engineer who approaches products as systems: clear structure, dependable behavior, and an interface with intention. Music made me a more attentive developer; engineering made me a better musician.</p><div class="facts"><div class="fact"><span>ROLE</span><b>SOFTWARE ENGINEER</b></div><div class="fact"><span>MODE</span><b>BUILD / LEARN / CREATE</b></div><div class="fact"><span>LOCATION</span><b>REMOTE</b></div></div></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head"><h2>PROJECTS.LIST</h2><span class="command">./projects --featured</span></div>
+        <div class="projects"><article class="project"><span class="project-num">01 / PUBLIC</span><h3>Vhox</h3><p>Personal profile repository and public engineering signal.</p><span class="project-meta">GITHUB · 0 STARS</span></article></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head"><h2>TECH.STACK</h2><span class="command">./environment --active</span></div>
+        <div class="stack"><div class="tool"><span>LANGUAGE</span><b>JavaScript</b></div><div class="tool"><span>LANGUAGE</span><b>TypeScript</b></div><div class="tool"><span>LIBRARY</span><b>React</b></div><div class="tool"><span>RUNTIME</span><b>Python</b></div><div class="tool"><span>MARKUP</span><b>HTML5</b></div><div class="tool"><span>STYLE</span><b>CSS3</b></div><div class="tool"><span>LANGUAGE</span><b>C#</b></div><div class="tool"><span>CONTROL</span><b>Git / GitHub</b></div></div>
+      </section>
+
+      <section class="panel shooter">
+        <div class="section-head"><h2>CONTRIBUTION.SHOOTER</h2><span class="command">./mission --contributions</span></div>
+        <div class="grid" id="grid"><div class="ship"></div><div class="beam"></div></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head"><h2>PROFILE.SIGNAL</h2><span class="command">github://Vhox — public</span></div>
+        <div class="signal"><div class="metric" style="--accent: var(--blue); --level: 18%"><span>STARS</span><b>0</b><div class="meter"><i></i></div></div><div class="metric" style="--accent: var(--cyan); --level: 22%"><span>CONTRIBUTIONS</span><b>LIVE</b><div class="meter"><i></i></div></div><div class="metric" style="--accent: var(--violet); --level: 29%"><span>REPOS</span><b>1</b><div class="meter"><i></i></div></div><div class="metric" style="--accent: var(--green); --level: 87%"><span>FOLLOWERS</span><b>8</b><div class="meter"><i></i></div></div></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head"><h2>CONNECT</h2><span class="command">./channels --open</span></div>
+        <nav class="connect"><a class="link" href="https://www.youtube.com/@macielthales"><em>01</em>YOUTUBE</a><a class="link" href="https://www.instagram.com/thalesmacciel"><em>02</em>INSTAGRAM</a><a class="link" href="https://www.twitch.tv/vhoxzera"><em>03</em>TWITCH</a><a class="link" href="mailto:thales.mac@gmail.com"><em>04</em>EMAIL</a><a class="link" href="https://www.linkedin.com/in/thales-maciel-b8466a173"><em>05</em>LINKEDIN</a></nav>
+      </section>
+      <p class="footer">VHOX // SYSTEM · VISUAL PROTOTYPE · 2026</p>
+    </main>
+    <script>
+      const grid = document.querySelector('#grid');
+      for (let i = 0; i < 182; i++) { const c = document.createElement('i'); c.className = 'cell'; grid.prepend(c); }
+    </script>
+  </body>
+</html>
