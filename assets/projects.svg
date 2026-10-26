@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="274" viewBox="0 0 860 274" role="img" aria-labelledby="title desc">
+  <title id="title">Featured project</title>
+  <desc id="desc">Vhox profile repository project panel.</desc>
+  <defs>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#101c2e"/><stop offset=".5" stop-color="#0b111a"/><stop offset="1" stop-color="#0b2024"/></linearGradient>
+    <radialGradient id="aura" cx=".95" cy=".15"><stop stop-color="#226d73" stop-opacity=".25"/><stop offset="1" stop-color="#226d73" stop-opacity="0"/></radialGradient>
+    <style>.k{fill:#58a6ff;font:700 13px ui-monospace,monospace;letter-spacing:2px}.m{fill:#8b949e;font:12px ui-monospace,monospace}.h{fill:#e6edf3;font:700 23px Arial,sans-serif}.p{fill:#aeb9c9;font:14px Arial,sans-serif}</style>
+  </defs>
+  <rect width="860" height="274" rx="24" fill="url(#panel)" stroke="#388bfd" stroke-opacity=".7"/>
+  <rect width="860" height="274" rx="24" fill="url(#aura)"/>
+  <text x="32" y="46" class="k">PROJECTS.LIST</text><text x="682" y="46" class="m">1 PUBLIC PROJECT</text>
+  <path d="M32 64H828" stroke="#388bfd" stroke-opacity=".6"/>
+  <rect x="32" y="93" width="390" height="142" rx="15" fill="#080d14" fill-opacity=".6" stroke="#388bfd" stroke-opacity=".9"/>
+  <circle cx="55" cy="116" r="3" fill="#58a6ff"/><text x="67" y="120" class="m">Vhox · PUBLIC</text>
+  <text x="54" y="161" class="h">Vhox</text><text x="54" y="187" class="p">Personal profile repository.</text>
+  <text x="54" y="217" class="m">HTML · 0 STARS</text>
+</svg>
