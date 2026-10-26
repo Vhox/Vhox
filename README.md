@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/DenverCoder1/readme-typing-svg"><img src="https://readme-typing-svg.demolab.com/?font=Orbitron&weight=600&size=26&pause=900&color=7DF9FF&center=true&vCenter=true&width=900&height=66&lines=Frontend%20or%20full-stack%20engineer;Hello!%20I'm%20Thales.%20I'm%20a%20Software%20Engineer%20and%20a%20Musician.;Building%20with%20HTML%20%C2%B7%20JavaScript;Always%20coding%20%C2%B7%20learning%20%C2%B7%20shipping%20%F0%9F%9A%80" alt="Animated introduction" /></a>
+  <a href="https://github.com/DenverCoder1/readme-typing-svg"><img src="https://readme-typing-svg.demolab.com/?font=Orbitron&weight=600&size=26&pause=900&color=7DF9FF&center=true&vCenter=true&width=900&height=66&lines=Frontend%20or%20full-stack%20engineer;Hello!%20I'm%20Thales.%20I'm%20a%20Software%20Engineer%20and%20a%20Musician.;JavaScript%20%C2%B7%20TypeScript%20%C2%B7%20React%20%C2%B7%20Python%20%C2%B7%20Swift%20%C2%B7%20Databases;Always%20coding%20%C2%B7%20learning%20%C2%B7%20shipping%20%F0%9F%9A%80" alt="Animated introduction" /></a>
 </p>
 
 <p align="center">

@@ -1,0 +1,32 @@
+name: Refresh profile signal
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 4 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Render profile assets
+        run: node scripts/render-profile.mjs
+        env:
+          # PROFILE_TOKEN is optional, but includes private contribution totals when configured.
+          PROFILE_TOKEN: ${{ secrets.PROFILE_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Commit refreshed visuals
+        run: |
+          if git diff --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/contribution-shooter.svg assets/profile-signal.svg
+          git commit -m 'chore: refresh profile signal'
+          git push
